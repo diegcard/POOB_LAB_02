@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=DataMatrix
+comment0.text=\n\ @author\ ECI,\ 2024\n\n
+comment1.params=data
+comment1.target=DataMatrix(java.lang.String[][])
+comment1.text=\n\ Creates\ a\ matrix\ with\ the\ defined\ size\ and\ value\n
+comment2.params=
+comment2.target=DataMatrix\ shape()
+comment3.params=row\ column
+comment3.target=java.lang.String\ toString(int,\ int)
+comment4.params=row\ column
+comment4.target=DataMatrix\ reshape(int,\ int)
+comment5.params=t
+comment5.target=DataMatrix\ add(DataMatrix)
+comment6.params=other
+comment6.target=boolean\ equals(DataMatrix)
+comment7.params=other
+comment7.target=boolean\ equals(java.lang.Object)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

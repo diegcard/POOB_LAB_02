@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Data
+comment0.text=\n\ Represents\ a\ simple\ data\:\ boolean\ ('TRUE',\ 'FALSE'),\ numerical\ (integer\ or\ real),\ character\ (any\ character,\ if\ it\ is\ a\ digit\ it\ is\ considered\ numeric)\n\n\ @author\ ECI-2024-01\n
+comment1.params=s
+comment1.target=Data(java.lang.String)
+comment1.text=\n\ Constructs\ a\ new\ Data\ given\ its\ value,\ If\ it\ is\ not\ possible,\ it\ is\ assumed\ FALSE\n
+comment2.params=b
+comment2.target=Data\ add(Data)
+comment2.text=\n\ Add\ the\ specified\ data\ with\ this\ data\n
+comment3.params=b
+comment3.target=Data\ sub(Data)
+comment3.text=\n\ Substract\ the\ specified\ data\ with\ this\ data\n
+comment4.params=b
+comment4.target=char\ type(Data)
+comment4.text=\n\ Returns\ the\ data\ type\n\ @returns\ 'b',\ 'n',\ or\ 'c'\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=
+comment6.target=java.lang.String\ string()
+comment6.text=\n\ Return\ the\ string\ used\ to\ create\ the\ Data\ without\ leading\ or\ trailing\ blanks\n
+numComments=7
