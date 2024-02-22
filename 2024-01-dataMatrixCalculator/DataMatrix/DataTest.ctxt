@@ -1,17 +1,14 @@
 #BlueJ class context
 comment0.target=DataTest
 comment1.params=
-comment1.target=void\ beforeClass()
+comment1.target=void\ shouldCreateData()
+comment1.text=\r\n\ \ \ \ @BeforeClass\r\n\ \ \ \ public\ void\ beforeClass(){\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ @Before\r\n\ \ \ \ public\ void\ before(){\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ }\r\n
 comment2.params=
-comment2.target=void\ before()
+comment2.target=void\ shouldRepresentADataAsAString()
 comment3.params=
-comment3.target=void\ shouldCreateData()
+comment3.target=void\ shouldKnowWhenTwoBooleansAreEquals()
 comment4.params=
-comment4.target=void\ shouldRepresentADataAsAString()
+comment4.target=void\ shouldKnowWhenTwoNumbersAreEquals()
 comment5.params=
-comment5.target=void\ shouldKnowWhenTwoBooleansAreEquals()
-comment6.params=
-comment6.target=void\ shouldKnowWhenTwoNumbersAreEquals()
-comment7.params=
-comment7.target=void\ shouldKnowWhenTwoCharactersAreEquals()
-numComments=8
+comment5.target=void\ shouldKnowWhenTwoCharactersAreEquals()
+numComments=6
