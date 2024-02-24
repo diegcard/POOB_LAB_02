@@ -4,7 +4,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
+/**
+ * Unit test of Data class
+ * @author Cardenas, Cardona
+ */
 public class DataTest {
 
     /*
@@ -75,5 +78,4 @@ public class DataTest {
         assertFalse (new Data(".").equals(new Data("," )));
         assertFalse (new Data("c").equals(new Data(" f  " )));
     }
-    
 }

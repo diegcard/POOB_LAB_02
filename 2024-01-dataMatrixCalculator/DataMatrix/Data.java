@@ -2,7 +2,7 @@
 /**
  * Represents a simple data: boolean ('TRUE', 'FALSE'), numerical (integer or real), character (any character, if it is a digit it is considered numeric)
  *
- * @author ECI-2024-01
+ * @author Cardenas y Cardona
  */
 public class Data{
     private String value;
@@ -239,9 +239,9 @@ public class Data{
      */
     public boolean equals(Data b){
         if(this.dataType == 'n' && b.type() == 'n'){
-            return Double.parseDouble(this.value) == Double.parseDouble(b.value);
+            return Double.parseDouble(this.value) == Double.parseDouble(b.toString());
         }else{
-            return this.value.equalsIgnoreCase(b.value);
+            return this.value.equalsIgnoreCase(b.toString());
         }
     }
 }
