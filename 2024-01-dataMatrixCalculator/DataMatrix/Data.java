@@ -170,8 +170,19 @@ public class Data{
         Data newData = new Data(result);
         return newData;
     }
-    
-    //substract the specified data whit this data if this data is a number
+
+    /**
+     * Resta los datos especificados de estos datos si estos datos son un número.
+     *
+     * @param b Los datos a restar de estos datos.
+     * @return Un nuevo objeto Data que representa el resultado de la resta.
+     *
+     * El método funciona de la siguiente manera:
+     * - Si el tipo de los datos especificados es booleano ('b'), verifica si el valor de estos datos es 0.
+     *   Si es así, establece el resultado en "FALSE". De lo contrario, convierte los datos especificados a booleano y realiza una operación lógica AND con true.
+     * - Si el tipo de los datos especificados es carácter ('c'), resta el valor ASCII del carácter del valor de estos datos.
+     * - Si el tipo de los datos especificados no es ni booleano ni carácter, resta el valor de los datos especificados del valor de estos datos.
+     */
     private Data subNum(Data b){
         String result;
         switch(b.type()){

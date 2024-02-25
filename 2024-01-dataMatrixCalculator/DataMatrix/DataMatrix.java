@@ -27,7 +27,7 @@ public class DataMatrix{
         }
         
     }
-    
+
      /**
      * Gets the data matrix.
      * 
@@ -37,6 +37,42 @@ public class DataMatrix{
         return data;
     }
     
+    /**
+     * Bono:
+     * Creamos una nueva funcion que sea transponer la matrix dada
+     * 
+     * @return DataMatrix Transpuesta
+     */
+    public DataMatrix transpose() {
+        DataMatrix transposedMatrix = new DataMatrix(new String[colum][row]);
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < colum; j++) {
+                transposedMatrix.getDataMatrix()[j][i] = data[i][j];
+            }
+        }
+        return transposedMatrix;
+    }
+
+    /**
+     * Bono:
+     * Multiplica la matriz por un escalar.
+     * 
+     * @param scalar el escalar por el cual se multiplicará la matriz
+     * @return una nueva matriz resultante de la multiplicación por el escalar
+     */
+    public DataMatrix multiplyByScalar(String scalar){
+        String[][] newMatrix = new String[row][colum];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<colum;j++){
+                Data variable = data[i][j];
+                if(variable.type() == 'n'){
+                    newMatrix[i][j] = (Double.parseDouble(variable.toString()) * Double.parseDouble(scalar))+"";
+                }
+            }
+        }
+        return new DataMatrix(newMatrix);
+    }
+
     /**
      * Gets the number of rows in the matrix.
      * 
@@ -74,41 +110,32 @@ public class DataMatrix{
      * @return A string representation of the matrix.
      */
     public String toString(int row, int column){
-        // Obtener el ancho máximo de cada columna
         int[] anchosColumna = obtenerAnchosColumna(data);
         StringBuilder sb = new StringBuilder();
-        // Recorrer la matriz fila por fila
         for (int i = 0; i < row; i++) {
-            // Agregar cada elemento de la fila al StringBuilder
             for (int j = 0; j < column; j++) {
-                // Añadir el elemento con el ancho de columna correspondiente
                 sb.append(String.format("%-" + anchosColumna[j] + "s", data[i][j].toString()));
             }
-            // Añadir un salto de línea al final de cada fila
             sb.append("\n");
         }
-        // Devolver la matriz alineada como String
         return sb.toString();
-        }
+    }
 
-    // Method to obtain the maximum width of each column
+    /**
+     * Returns the width of each column in the matrix.
+     *
+     * @param matriz The matrix.
+     * @return An array with the width of each column.
+     */
     private static int[] obtenerAnchosColumna(Data[][] matriz) {
-        // Crear un array para almacenar los anchos máximos de cada columna
         int[] anchosColumna = new int[matriz[0].length];
-
-        // Recorrer la matriz fila por fila
         for (Data[] fila : matriz) {
-
-            // Recorrer cada elemento de la fila
             for (int i = 0; i < fila.length; i++) {
-                // Actualizar el ancho máximo de la columna si es necesario
                 if (fila[i].toString().length() > anchosColumna[i]) {
                     anchosColumna[i] = fila[i].toString().length()+1;
                 }
             }
         }
-
-        // Devolver el array con los anchos máximos de las columnas
         return anchosColumna;
     }
     

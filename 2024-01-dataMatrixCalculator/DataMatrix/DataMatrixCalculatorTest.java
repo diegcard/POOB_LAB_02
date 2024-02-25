@@ -119,5 +119,6 @@ public class DataMatrixCalculatorTest
         calculadora.assign("result1","variable1",'-',"variable4");
         assertEquals(calculadora.toString("result1"),"T    FALSE \n75.0 F     \n");
     }
+
     
 }
