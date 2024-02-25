@@ -30,8 +30,31 @@ public class DataMatrixCalculator{
         DataMatrix value = new DataMatrix(values);
         variables.put(name,value);
         this.isOk = true;
-    }    
-    
+    }
+
+    public boolean areEqual(String var1, String var2) {
+        if (!variables.containsKey(var1) || !variables.containsKey(var2)) {
+            this.isOk = false;
+            return false;
+        }
+        DataMatrix matrix1 = variables.get(var1);
+        DataMatrix matrix2 = variables.get(var2);
+        boolean result = matrix1.equals(matrix2);
+        this.isOk = result;
+        return result;
+    }
+
+    public void multiplyByScalar(String resultVar, String var, String scalar) {
+        if (!variables.containsKey(var)) {
+            this.isOk = false;
+            return;
+        }
+        DataMatrix matrix = variables.get(var);
+        DataMatrix result = matrix.multiplyByScalar(scalar);
+        variables.put(resultVar, result);
+        this.isOk = true;
+    }
+
     /**
      * Consult the variables of a calculator
      * @return variables is a String Arrays with all variable's name
@@ -44,7 +67,9 @@ public class DataMatrixCalculator{
             i++;
         }
         return allVariables;
-    }    
+    }
+
+    //Creame el metodo assignBinary
        
     /**
      * Assigns the value of an operation to a variable (unary operations)

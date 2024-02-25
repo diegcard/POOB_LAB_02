@@ -119,6 +119,27 @@ public class DataMatrixCalculatorTest
         calculadora.assign("result1","variable1",'-',"variable4");
         assertEquals(calculadora.toString("result1"),"T    FALSE \n75.0 F     \n");
     }
-
     
+    @Test
+    public void testMultiplyByScalar() {
+        String[][] matrix = {{"1", "2"}, {"3", "4"}};
+        calculadora.assign("matrix", matrix);
+        calculadora.multiplyByScalar("result", "matrix", "2");
+        assertEquals("2 4 \n6 8 \n", calculadora.toString("result"));
+        calculadora.multiplyByScalar("resultNonExistent", "nonExistent", "2");
+        assertEquals("FALSE \n", calculadora.toString("resultNonExistent"));
+    }
+    
+    @Test
+    public void testAreEqual() {
+        String[][] matrix1 = {{"1", "2"}, {"3", "4"}};
+        String[][] matrix2 = {{"1", "2"}, {"3", "4"}};
+        String[][] matrix3 = {{"5", "6"}, {"7", "8"}};
+        calculadora.assign("matrix1", matrix1);
+        calculadora.assign("matrix2", matrix2);
+        calculadora.assign("matrix3", matrix3);
+        assertTrue(calculadora.areEqual("matrix1", "matrix2"));
+        assertFalse(calculadora.areEqual("matrix1", "matrix3"));
+        assertFalse(calculadora.areEqual("matrix1", "nonExistent"));
+    }
 }
